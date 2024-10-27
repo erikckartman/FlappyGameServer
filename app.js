@@ -12,7 +12,10 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const client = new Pool({    
-    connectionString: 'postgresql://leaderboard_sjmj_user:SKQYF30ycuwVpTtueJzS9et6xMHizzk7@dpg-csefngu8ii6s73933gq0-a.frankfurt-postgres.render.com/leaderboard_sjmj'
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    }
 });
 
 client.connect()
