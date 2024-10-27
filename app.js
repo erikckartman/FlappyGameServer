@@ -32,6 +32,10 @@ app.get('/getdata', async (req, res) => {
     console.log(scoredata);
 });
 
+app.get('/', async (req, res) => {
+    res.send("Server works");
+})
+
 app.post('/senddata', async (req, res) => {
     console.log("Request Body:", req.body);
     const name = req.body.name;
@@ -51,9 +55,3 @@ app.post('/senddata', async (req, res) => {
 app.listen(port, () => {
     console.log("Server works on port: " + port);
 });
-
-//host: 'dpg-csefngu8ii6s73933gq0-a.render.com',
-//    port: 5432,
-//        database: 'leaderboard_sjmj',
-//            user: 'leaderboard_sjmj_user',
-//                password: 'SKQYF30ycuwVpTtueJzS9et6xMHizzk7'
